@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IEA Cirebon — Indonesian Escorting Ambulance. Berbuat Tanpa Berharap.">
+  <title>IEA Cirebon | Berbuat Tanpa Berharap</title>
+  <style>
+    :root{
+      --red:#d71920; --red-dark:#a90f16; --ink:#17191d; --muted:#626873;
+      --paper:#f5f6f8; --white:#fff; --line:#e5e7eb;
+      --shadow:0 18px 45px rgba(15,23,42,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--white);line-height:1.65}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:auto}
+    .topbar{background:#111318;color:#fff;font-size:13px;padding:8px 0}
+    .topbar .container{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:.3px}
+    .brand-mark{width:44px;height:44px;border-radius:12px;background:var(--red);display:grid;place-items:center;color:#fff;font-size:25px;font-weight:900}
+    .brand small{display:block;font-size:10px;color:var(--muted);letter-spacing:1.6px}
+    nav{display:flex;gap:23px;align-items:center;font-size:14px;font-weight:700}
+    nav a:hover{color:var(--red)}
+    .nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 19px;border-radius:8px;background:var(--red);color:#fff;font-weight:800;border:2px solid var(--red);transition:.2s}
+    .nav-cta:hover,.btn:hover{background:var(--red-dark);border-color:var(--red-dark);transform:translateY(-1px)}
+    .menu-btn{display:none;background:none;border:0;font-size:26px}
+    .hero{background:linear-gradient(115deg,rgba(13,16,22,.94),rgba(13,16,22,.78)),radial-gradient(circle at 80% 20%,#d71920 0,transparent 35%),#17191d;color:#fff;padding:105px 0 100px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:55px;align-items:center}
+    .eyebrow{color:#ff777c;font-size:12px;font-weight:900;letter-spacing:2.5px;text-transform:uppercase}
+    h1{font-size:clamp(38px,6vw,68px);line-height:1.04;margin:15px 0 20px;letter-spacing:-1.8px}
+    h1 span{color:#ff4a50}
+    .hero p{max-width:620px;color:#d5d8de;font-size:18px;margin:0 0 28px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn-outline{background:transparent;border-color:#858a94;color:#fff}
+    .btn-outline:hover{background:#fff;color:#17191d;border-color:#fff}
+    .hero-card{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);padding:28px;border-radius:18px;backdrop-filter:blur(8px)}
+    .cross{width:76px;height:76px;border-radius:20px;background:var(--red);display:grid;place-items:center;color:#fff;font-size:52px;font-weight:300;margin-bottom:20px}
+    .hero-card h3{font-size:24px;margin:0 0 8px}
+    .hero-card p{font-size:15px;margin:0;color:#d5d8de}
+    section{padding:82px 0}
+    .section-head{max-width:690px;margin-bottom:35px}
+    .kicker{font-size:12px;color:var(--red);font-weight:900;letter-spacing:2px;text-transform:uppercase}
+    h2{font-size:clamp(29px,4vw,42px);line-height:1.15;margin:8px 0 14px;letter-spacing:-.8px}
+    .section-head p{color:var(--muted);margin:0}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:center}
+    .about-panel{background:var(--paper);border-radius:18px;padding:32px;border-left:5px solid var(--red)}
+    .about-panel blockquote{font-size:25px;font-weight:900;line-height:1.3;margin:0}
+    .about-panel span{display:block;margin-top:15px;color:var(--red);font-size:12px;font-weight:900;letter-spacing:2px}
+    .about-copy p{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .card{padding:27px;border:1px solid var(--line);border-radius:15px;background:#fff;box-shadow:0 6px 24px rgba(15,23,42,.04)}
+    .card-icon{width:48px;height:48px;border-radius:13px;background:#fff0f0;color:var(--red);display:grid;place-items:center;font-size:24px;margin-bottom:18px}
+    .card h3{margin:0 0 9px;font-size:19px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .dark-section{background:#17191d;color:#fff}
+    .dark-section .section-head p{color:#c1c5ce}
+    .gallery-note{padding:28px;border:1px dashed #777d88;border-radius:14px;color:#c1c5ce}
+    .gallery-note strong{color:#fff}
+    .gallery-note a{color:#ff777c;text-decoration:underline}
+    .join{background:linear-gradient(120deg,#b80f17,#e3262d);color:#fff}
+    .join .kicker{color:#ffd5d6}
+    .join p{color:#ffe6e7;max-width:650px}
+    .join .btn{background:#fff;color:#b80f17;border-color:#fff}
+    .join .btn:hover{background:#f3f3f3}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .contact-box{padding:28px;border:1px solid var(--line);border-radius:15px}
+    .contact-item{display:flex;gap:13px;margin:18px 0;color:var(--muted)}
+    .contact-item b{display:block;color:var(--ink)}
+    footer{background:#101216;color:#c1c5ce;padding:28px 0;font-size:13px}
+    footer .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .float-wa{position:fixed;right:20px;bottom:20px;z-index:20;background:#19a85b;color:#fff;padding:13px 18px;border-radius:999px;font-weight:900;box-shadow:var(--shadow)}
+    @media(max-width:800px){
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr}
+      nav{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;padding:18px 4%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
+      nav.open{display:flex}
+      .menu-btn{display:block}
+      .nav-cta{display:none}
+      .hero{padding:75px 0}
+      section{padding:62px 0}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>IEA CIREBON · INDONESIAN ESCORTING AMBULANCE</span>
+      <span>Berbuat Tanpa Berharap</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#beranda" aria-label="IEA Cirebon Beranda">
+        <span class="brand-mark">+</span>
+        <span>IEA CIREBON<small>INDONESIAN ESCORTING AMBULANCE</small></span>
+      </a>
+      <button class="menu-btn" aria-label="Buka menu" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+      <nav>
+        <a href="#profil">Profil</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#dokumentasi">Dokumentasi</a>
+        <a href="#relawan">Relawan</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+      <a class="nav-cta" href="https://wa.me/6282318904702" target="_blank" rel="noopener">Hubungi Kami</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Indonesian Escorting Ambulance · Cirebon</div>
+          <h1>Bergerak untuk<br><span>Kemanusiaan.</span></h1>
+          <p>IEA Cirebon hadir sebagai wadah kepedulian dan aksi sosial. Bersama, kita dapat membantu sesama dengan semangat solidaritas, kepedulian, dan tanggung jawab.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/6282318904702" target="_blank" rel="noopener">Hubungi IEA Cirebon</a>
+            <a class="btn btn-outline" href="#profil">Kenali Kami</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="cross">+</div>
+          <h3>Berbuat Tanpa Berharap</h3>
+          <p>Menumbuhkan kepedulian, memperkuat solidaritas, dan hadir untuk membantu sesama.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="profil">
+      <div class="container about-grid">
+        <div class="section-head">
+          <div class="kicker">Tentang Kami</div>
+          <h2>Mengenal IEA Cirebon</h2>
+          <p>Indonesian Escorting Ambulance (IEA) Cirebon merupakan komunitas yang membawa semangat kepedulian sosial dan kemanusiaan.</p>
+        </div>
+        <div class="about-copy">
+          <p>Melalui kebersamaan dan partisipasi relawan, IEA Cirebon berupaya mendukung kegiatan sosial serta membangun lingkungan yang lebih peduli terhadap sesama.</p>
+          <p>Website ini menjadi pusat informasi profil, kegiatan, dokumentasi, dan informasi pendaftaran relawan IEA Cirebon.</p>
+          <div class="about-panel">
+            <blockquote>“Berbuat Tanpa Berharap”</blockquote>
+            <span>MOTTO IEA CIREBON</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="layanan" style="background:var(--paper)">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Apa yang Kami Lakukan</div>
+          <h2>Kegiatan & Peran Kami</h2>
+          <p>Berbagai bentuk kegiatan yang dapat ditampilkan sesuai program resmi dan aktivitas yang dijalankan IEA Cirebon.</p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">✚</div>
+            <h3>Dukungan Kemanusiaan</h3>
+            <p>Berpartisipasi dalam kegiatan sosial dan aksi kemanusiaan bersama masyarakat.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">♡</div>
+            <h3>Kegiatan Sosial</h3>
+            <p>Membangun kepedulian melalui kegiatan sosial, kolaborasi, dan gotong royong.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon">ⓘ</div>
+            <h3>Edukasi & Informasi</h3>
+            <p>Membagikan informasi dan edukasi yang bermanfaat bagi masyarakat.</p>
+          </article>
+        </div>
+        <p style="font-size:12px;color:var(--muted);margin-top:18px">Catatan: sesuaikan uraian kegiatan ini dengan layanan dan program resmi IEA Cirebon sebelum website dipublikasikan.</p>
+      </div>
+    </section>
+
+    <section class="dark-section" id="dokumentasi">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Jejak Kegiatan</div>
+          <h2>Dokumentasi IEA Cirebon</h2>
+          <p>Lihat informasi dan dokumentasi kegiatan terbaru melalui kanal media sosial resmi kami.</p>
+        </div>
+        <div class="gallery-note">
+          <strong>Galeri kegiatan</strong><br>
+          Konten foto, carousel, dan video kegiatan dapat ditambahkan pada bagian ini. Untuk melihat dokumentasi terbaru, kunjungi Instagram resmi IEA Cirebon.
+          <br><br><a href="https://www.instagram.com/iea_cirebon/" target="_blank" rel="noopener">@iea_cirebon di Instagram ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="join" id="relawan">
+      <div class="container">
+        <div class="kicker">Jadi Bagian dari Kami</div>
+        <h2>Gabung Menjadi Relawan</h2>
+        <p>Ingin ikut berkontribusi dalam kegiatan sosial dan kemanusiaan? Hubungi IEA Cirebon untuk mendapatkan informasi mengenai proses dan persyaratan pendaftaran relawan.</p>
+        <a class="btn" href="https://wa.me/6282318904702?text=Halo%20IEA%20Cirebon%2C%20saya%20ingin%20bertanya%20tentang%20pendaftaran%20relawan." target="_blank" rel="noopener">Tanya Pendaftaran Relawan</a>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Hubungi Kami</div>
+          <h2>Kontak IEA Cirebon</h2>
+          <p>Untuk informasi kegiatan, kolaborasi, dan pendaftaran relawan, silakan hubungi kanal resmi berikut.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-box">
+            <div class="contact-item"><span>☎</span><div><b>WhatsApp</b><a href="https://wa.me/6282318904702" target="_blank" rel="noopener">0823-1890-4702</a></div></div>
+            <div class="contact-item"><span>✉</span><div><b>Email</b><a href="mailto:ieakorwilcirebon@gmail.com">ieakorwilcirebon@gmail.com</a></div></div>
+            <div class="contact-item"><span>◎</span><div><b>Instagram</b><a href="https://www.instagram.com/iea_cirebon/" target="_blank" rel="noopener">@iea_cirebon</a></div></div>
+          </div>
+          <div class="contact-box">
+            <h3>Terhubung dengan IEA Cirebon</h3>
+            <p style="color:var(--muted)">Ikuti media sosial kami untuk mendapatkan informasi dokumentasi, kegiatan, dan pengumuman terbaru.</p>
+            <a class="btn" href="https://www.instagram.com/iea_cirebon/" target="_blank" rel="noopener">Kunjungi Instagram</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>© <span id="year"></span> IEA Cirebon. Semua hak dilindungi.</span>
+      <span>Berbuat Tanpa Berharap.</span>
+    </div>
+  </footer>
+  <a class="float-wa" href="https://wa.me/6282318904702" target="_blank" rel="noopener">WhatsApp ↗</a>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('nav a').forEach(link => link.addEventListener('click', () => {
+      document.querySelector('nav').classList.remove('open');
+    }));
+  </script>
+</body>
+</html>
